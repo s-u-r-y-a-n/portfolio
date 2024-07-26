@@ -1,0 +1,85 @@
+<!--SAME EXCERCISE BUT INSTEAD OS USING MULTIPLE ID'S , USE CLASS ATTRIBUTE AND LOOP OVER THIS-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <form action="">
+    <label for="username"
+      >Username: <input type="text" id="username" /> <br
+    /></label>
+    <br />
+
+    <br />
+    <label for="password">Password: </label>
+    <input type="password" id="password" /> <br />
+    <br />
+    <label for="country">Select your country:</label>
+    <select name="country" id="country">
+      <option value="select country">Select Your Country</option>
+      <option value="india">India</option>
+      <option value="america">America</option>
+      <option value="japan">Japan</option>
+      <option value="china">China</option>
+    </select>
+    <br />
+    <br />
+    <label for="gender">Select Your Gender:</label>
+    <label for="male">Male</label>
+    <input type="radio" name="gender" value="male" class="gender"/>
+    <label for="female">Female</label>
+    <input type="radio" name="gender" value="female" class="gender"/>
+    <label for="others">Others</label>
+    <input type="radio" name="gender" value="others" class="gender"/> <br />
+    <br />
+    <label for="">Select Your Skills</label>
+    <label for="python">Python</label>
+    <input type="checkbox" value="Python" name="skills" id="python" />
+    <label for="css">CSS</label>
+    <input type="checkbox" value="CSS" name="skills" id="css" />
+    <label for="html">HTML</label>
+    <input type="checkbox" value="HTML" name="skills" id="html" /> <br />
+    <br />
+
+    <button
+      id="btn"
+      onclick="displayData(event)"
+      type="button"
+      class="btn btn-primary"
+    >
+      Submit
+    </button>
+  </form>
+
+  <script>
+function displayData(event) {
+        event.preventDefault();
+        let username = document.getElementById("username").value;
+        let password = document.getElementById("password").value;
+        let country = document.getElementById("country").value;
+        let gender = document.getElementsByClassName("gender").value;
+        let python = document.getElementById("python").value;
+        let css = document.getElementById("css").value;
+        let html = document.getElementById("html").value;
+
+       for(let i = 0; i < gender.length; i++) {
+        if(gender[i].checked) {
+          gender = gender[i].value;
+        }
+        break;
+       }
+
+       console.log("Gender" , gender);
+        
+}
+
+  </script>
+  
+
+
+</body>
+</html>
